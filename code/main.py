@@ -1,23 +1,17 @@
-# run model here
+#-----------------------------------------------------------------------------#
+# Run Model - Main
+#-----------------------------------------------------------------------------#
 
-from run_model import *
-from pyomo.core import *
-import os
+from run_mod import *
 
+# input data file location
+input_path=r'/Users/oluyemijegede/DSProjects/local_energy_system_optimisation/code/experiment1.xlsx'
 
-cwd = os.getcwd()
+# results saved to text file location
+result_file = '/Users/oluyemijegede/DSProjects/local_energy_system_optimisation/code/results/results.txt'
 
-# input excel file to set system details
-input_path = os.path.join(cwd, 'code', 'system_config.xlsx')
+# model parameters saved to text file location
+param_file = '/Users/oluyemijegede/DSProjects/local_energy_system_optimisation/code/parameters/params.txt'
 
-# results files to be saved in which folder?
-results_path = os.path.join(cwd, 'results', 'results.txt')
-
-# folder where parameters are saved
-parameters_path = os.path.join(cwd, 'parameter', 'parameters.txt')
-
-# run model
-run_en_model(input_path, results_path, parameters_path)
-
-# visualise results
-visualise(result_path)
+# execute model
+run_model(input_path, param_file, result_file) # defined in run_mod.py
